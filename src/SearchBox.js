@@ -4,9 +4,9 @@ const SearchBox = (props) => {
     return (
         <div className='pa2'>
             <input
-                className='pa3 ba b--green bg-lightest-blue'
+                className='pa3  ba '
                 type='search'
-                placeholder='Search robots'
+                placeholder='Search '
                 onChange={props.searchChange}
             />
         </div>

@@ -7,11 +7,10 @@ function CardList({ robots }) {
                 robots.map((user, i) => {
                     return <Card
                         key={i}
-                        id={robots[i].id}
+                        src={robots[i].src}
+                        location={robots[i].location}
                         name={robots[i].name}
-                        email={robots[i].email}
                     />
-
                 })
             }
         </div>

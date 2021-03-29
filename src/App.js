@@ -15,7 +15,7 @@ class App extends Component {
 
 
     componentDidMount() {
-        fetch('https://mongodb-tutorial-app.herokuapp.com/BookDB/book/')
+        fetch('https://mongodb-tutorial-app.herokuapp.com/cameras/cam/')
             .then(response => response.json())
             .then(users => this.setState({ robots: users }))
     }
