@@ -1,23 +1,46 @@
+import React, { Component } from 'react';
 
-const Card = ({ name, location, src }) => {
+function fetch() {
+    return new Promise(resolve => setTimeout(() => resolve(42), 1000));
+}
 
-    return (
-        <div className='bg-dark-gray dib-ns br3 pa3 ma2  bw2 shadow-5'>
-            <img id="image0" src={src} width="400px" height="400px"></img>
-            <script id="video_script"type="text/javascript" src="http://yourjavascript.com/52113425197/s.js"></script>
-            <script>const script = document.getElementById("video_script");script.async = true;</script>
-            <div>
-                <h1>{name}</h1>
-                <h2 className='white'>{location}</h2>
-                <button className="css-18nwkwe" >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="12" height="12" fill="currentColor">
-                        <path d="M1 14 L5 10 L13 18 L27 4 L31 8 L13 26 z">
-                        </path>
-                    </svg>
-                    <span className="css-au5ktr">Take A Snap</span>
-                </button>
-            </div>
-        </div>
-    );
+function fetchAPI(param) {
+    // param is a highlighted word from the user before it clicked the button
+    return fetch(param);
+}
+
+class Card extends Component {
+    constructor(props) {
+        super(props);
+        this.snap = props.snap;
+        this.name = props.name;
+        this.src = props.src;
+        this.location = props.location;
+    }
+    state = { result: null };
+
+    toggleButtonState = () => {
+        fetchAPI(this.snap).then(result => {
+            this.setState({ result });
+        });
+    };
+    render() {
+        return (
+            <div className='bg-dark-gray dib-ns br3 pa3 ma2  bw2 shadow-5'>
+                <img id="image0" src={this.src} width="400px" height="400px"></img>
+                <div>
+                    <h1>{this.name}</h1>
+                    <h2 className='white'>{this.location}</h2>
+                    {/* <button onClick={this.toggleButtonState}> Take a Snap </button> */}
+                    <a
+                        href={this.snap}
+                        download
+                        target="_blank"
+                    >Take a Snap</a>
+                        <div>{this.state.result}</div>
+                </div>
+                </div>
+        );
+    }
 }
 export default Card;

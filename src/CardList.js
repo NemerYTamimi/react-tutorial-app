@@ -10,6 +10,7 @@ function CardList({ robots }) {
                         src={robots[i].src}
                         location={robots[i].location}
                         name={robots[i].name}
+                        snap={robots[i].snap}
                     />
                 })
             }
