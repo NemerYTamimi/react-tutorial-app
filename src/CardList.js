@@ -16,8 +16,6 @@ function CardList({ robots }) {
             }
     </div>
 
-
-
     )
 }
 export default CardList;
