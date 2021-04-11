@@ -1,8 +1,7 @@
 import Card from './Card';
 
 function CardList({ robots }) {
-    return (
-        <div>
+    return (<div>
             {
                 robots.map((user, i) => {
                     return <Card
@@ -13,8 +12,12 @@ function CardList({ robots }) {
                         snap={robots[i].snap}
                     />
                 })
+
             }
-        </div>
+    </div>
+
+
+
     )
 }
 export default CardList;

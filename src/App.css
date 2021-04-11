@@ -5,10 +5,19 @@
     font-style: normal;
     font-weight: normal;
     src: local('Ronduit Capitals Light'), url('RonduitCapitals-Light.woff') format('woff');
-    }
-h1{
+}
+
+h1 {
     font-family: 'Ronduit Capitals Light';
     font-weight: 200;
     color: #e2e5ff;
+}
 
+.particles {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }
